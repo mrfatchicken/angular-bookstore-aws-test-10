@@ -1,0 +1,27 @@
+<app-loading-spinner [isLoaded]="loaded"></app-loading-spinner>
+
+<div class="book-list">
+  <div class="book-item" *ngFor="let book of books">
+    <div class="top">
+      <!-- Display star rating here -->
+      <app-rating [rating]="book.rating"></app-rating>
+      <!-- Book price -->
+      <div>{{ book.price | currency }}</div>
+    </div>
+
+    <!-- Book cover image -->
+    <img
+      src="
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReyK29t2-iBKBO9gt3mmVvmiQIc5g2R7i6XQ&s
+      "
+      alt="{{ book.name }} cover"
+      class="cover-image"
+    />
+
+    <!-- Book title -->
+    <h3>{{ book.name }}</h3>
+
+    <!-- Add to cart button -->
+    <button class="add-to-cart" (click)="addToCart(book)">Add to cart</button>
+  </div>
+</div>

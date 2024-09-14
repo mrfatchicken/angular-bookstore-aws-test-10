@@ -1,0 +1,5 @@
+<h1>{{ categoryToDisplay }}</h1>
+
+<ng-template [ngIf]="loaded">
+  <app-list-books [books]="books"></app-list-books>
+</ng-template>

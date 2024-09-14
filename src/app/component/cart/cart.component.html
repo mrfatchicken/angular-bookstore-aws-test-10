@@ -1,0 +1,52 @@
+<app-loading-spinner [isLoaded]="isLoaded"></app-loading-spinner>
+
+<div class="shopping-cart" *ngIf="isLoaded">
+  <h1>Shopping cart</h1>
+
+  <div *ngIf="!orders.length">Nothing in cart.</div>
+
+  <div *ngFor="let order of orders" class="cart-item">
+    <div class="item-details">
+      <div class="item-cover">
+        <img
+          src="
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReyK29t2-iBKBO9gt3mmVvmiQIc5g2R7i6XQ&s
+      "
+          alt="{{ books[order.bookId]?.name }} cover"
+        />
+      </div>
+      <div class="item-info">
+        <h2>{{ books[order.bookId]?.name }}</h2>
+        <div>{{ books[order.bookId]?.category }}</div>
+        <!-- <div class="rating">
+          Rating:
+          <rating-star [rating]="books[order.bookId]?.rating"></rating-star>
+        </div> -->
+      </div>
+      <div class="item-price">
+        {{ books[order.bookId]?.price * order.quantity | currency }}
+      </div>
+    </div>
+    <div class="item-actions">
+      <input
+        type="number"
+        class="quantity-selector"
+        [value]="order.quantity"
+        min="1"
+        (change)="updateQuantity(order.bookId, $event.target.value)"
+      />
+      <button (click)="removeItem(order.bookId)">Remove</button>
+    </div>
+  </div>
+
+  <div class="checkout">
+    <div class="total-price">Total: {{ getTotalPrice() | currency }}</div>
+    <button
+      class="checkout-button"
+      (click)="checkout()"
+      [disabled]="!orders.length"
+    >
+      Checkout
+    </button>
+  </div>
+</div>

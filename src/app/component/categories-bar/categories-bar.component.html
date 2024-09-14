@@ -1,0 +1,9 @@
+<nav>
+  <a
+    href="javascript:;"
+    *ngFor="let category of m_categories"
+    (click)="navigateToBookCategory(category.key)"
+  >
+    {{ category.value }}
+  </a>
+</nav>

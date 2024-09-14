@@ -1,0 +1,18 @@
+<ng-container
+  *ngTemplateOutlet="isAuthenticated ? authorized : unAuthorized"
+></ng-container>
+
+<ng-template #authorized>
+  <div class="category-title">
+    <h2 id="category-label">{{ categoryToDisplay }}</h2>
+    <a href="javascript:;" (click)="browseCategory()"
+      >Browse {{ categoryToDisplay.toLowerCase() }}</a
+    >
+  </div>
+  <app-list-books [books]="books"></app-list-books>
+</ng-template>
+
+<ng-template #unAuthorized>
+  <p>Unauthorized</p>
+</ng-template>
+<br />

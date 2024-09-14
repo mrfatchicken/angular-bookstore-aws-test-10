@@ -1,0 +1,88 @@
+/* General Reset for links */
+a {
+  text-decoration: none;
+  color: #f7941e; /* Orange color to match your example */
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; /* Set background to white */
+  padding: 10px 40px; /* Adjust padding for a cleaner layout */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Bookstore header styling */
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-header a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f7941e; /* Orange color for bookstore text */
+  margin-left: 10px; /* Add space between icon and text */
+}
+
+/* Logo/icon next to Bookstore title */
+.navbar-header img {
+  width: 40px; /* Adjust the size of the icon */
+  height: auto;
+}
+
+/* Right Navigation Section */
+.right-nav {
+  display: flex;
+  align-items: center;
+  column-gap: 30px; /* Space between links */
+}
+
+.right-nav a {
+  color: #f7941e; /* Orange color to match the style */
+  font-size: 16px;
+  font-weight: 500; /* Semi-bold to match the example */
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover effects for right-nav links */
+.right-nav a:hover {
+  color: #ffae42; /* Slightly lighter orange on hover */
+  border-bottom: 2px solid transparent; /* Optional underline on hover */
+}
+
+/* Cart button styling */
+.right-nav .cart-icon {
+  background-color: #f7941e; /* Background orange for the cart */
+  color: white; /* White color for cart icon */
+  border-radius: 50%; /* Make it circular */
+  padding: 10px; /* Padding around the icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-nav .cart-icon:hover {
+  background-color: #ffae42; /* Lighter orange on hover */
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .right-nav {
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+  }
+
+  .navbar-header {
+    margin-bottom: 10px;
+  }
+}

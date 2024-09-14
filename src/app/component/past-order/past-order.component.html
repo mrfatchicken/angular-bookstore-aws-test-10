@@ -1,0 +1,43 @@
+<app-loading-spinner [isLoaded]="isLoaded"></app-loading-spinner>
+
+<div class="past-orders" *ngIf="isLoaded">
+  <h1>Past purchases</h1>
+
+  <div *ngIf="!pastOrders.length">No past purchases.</div>
+
+  <div *ngFor="let order of pastOrders" class="order-history">
+    <div class="order-date">
+      Order date: {{ order.orderDate | date : 'M/d/yyyy HH:mm' }}
+    </div>
+
+    <div *ngFor="let bookOrder of order.books" class="past-order-item">
+      <div class="item-details">
+        <div class="item-cover">
+          <img
+            src="
+          https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReyK29t2-iBKBO9gt3mmVvmiQIc5g2R7i6XQ&s
+        "
+            alt="{{ books[bookOrder.bookId]?.name }} cover"
+          />
+        </div>
+        <div class="item-info">
+          <h2>{{ books[bookOrder.bookId]?.name }}</h2>
+          <div>{{ books[bookOrder.bookId]?.category }}</div>
+          <app-rating [rating]="books[bookOrder.bookId]?.rating"></app-rating>
+        </div>
+
+        <div class="item-price">
+          {{ bookOrder.quantity }} @
+          {{ books[bookOrder.bookId]?.price | currency }}
+        </div>
+      </div>
+      <div class="item-actions">
+        <button
+          (click)="buyAgain(bookOrder.bookId, books[bookOrder.bookId]?.price)"
+        >
+          Buy again
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

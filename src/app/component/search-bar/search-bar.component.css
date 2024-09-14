@@ -1,0 +1,25 @@
+/* search-bar.component.css */
+.search-bar-container {
+  display: flex;
+  overflow: hidden;
+  border-color: black;
+  border: 1px solid;
+}
+
+.search-input {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  outline: none;
+}
+
+.search-button {
+  background-color: orange;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-icon {
+  display: block; /* Replace with an actual icon */
+}

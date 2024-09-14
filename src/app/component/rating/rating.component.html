@@ -1,0 +1,10 @@
+<div class="stars">
+  <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+    <i
+      class="fa"
+      [class.fa-star]="i < rating"
+      [class.fa-star-o]="i >= rating"
+      aria-hidden="true"
+    ></i>
+  </ng-container>
+</div>

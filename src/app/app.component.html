@@ -1,0 +1,10 @@
+<div class="main-application">
+  <navbar></navbar>
+  <ng-template [ngIf]="authenticated$ | async">
+    <app-search-bar></app-search-bar>
+    <app-categories-bar></app-categories-bar>
+  </ng-template>
+  <div class="page-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

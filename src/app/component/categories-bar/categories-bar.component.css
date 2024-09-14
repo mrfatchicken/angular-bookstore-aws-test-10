@@ -1,0 +1,39 @@
+/* General Reset for links */
+a {
+  text-decoration: none;
+  color: #fff; /* White text color */
+  font-size: 16px; /* Adjust the font size */
+  padding: 0 15px; /* Padding for each link */
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+/* Navbar Styling */
+nav {
+  background-color: #333; /* Dark background color */
+  padding: 10px 0; /* Add padding on the top and bottom */
+  text-align: center; /* Center-align the text */
+}
+
+/* Hover effect */
+a:hover {
+  color: #00b7ff; /* Light blue color on hover */
+}
+
+/* Optional: Add spacing between the links if needed */
+a + a {
+  margin-left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  nav {
+    text-align: left;
+    padding-left: 20px;
+  }
+}
